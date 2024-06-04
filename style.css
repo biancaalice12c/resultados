@@ -11,10 +11,19 @@
     --media-bg:  linear-gradient(180deg, #4D21C9 0%, rgba(37, 33, 201, 0.00) 100%, rgba(37, 33, 201, 0.00) 100%);
     --white: #FFF;
     --light-blue: #CAC9FF;
+    --dark-navy: #303859;
+    --resumo-div-bg: linear-gradient(0deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
+    --reacao-bg: #f55555;
+    --memoria-bg: #FF821E;
+    --verbal-bg: #00BB8F;
+    --visual-bg: #1125D6;
+    --very-light-blue: #ECF2FF;
+
 }
 
 body {
     font-size: 1.6rem;
+    background: var(--very-light-blue);
 }
 .resultado {
     padding-block: 2.4rem;
@@ -68,6 +77,7 @@ body {
 
 .resumo {
     padding: 2.4rem 3.2rem;
+    background: var(--white);
 }
 
 .resumo h2 {
@@ -88,12 +98,17 @@ body {
 .resumo > div div {
     display: flex;
     align-items: center;
-    padding: 1.6rem;
-   border-radius: 1.2rem;
-   margin-bottom: 1.6rem;
-
+    gap: 1.2rem;
 }
 
+.resumo > div strong {
+    color: var(--dark-navy);
+}
+
+
+.resumo > div strong span {
+    opacity: 0.5;
+}
 .resumo_reacao {
     background: var(--reacao-bg) var(--resumo-div-bg);
     color: var(--reacao-bg);
@@ -112,4 +127,68 @@ body {
 .resumo_visual {
     background: var(--visual-bg) var(--resumo-div-bg);
     color: var(--visual-bg);
+} 
+
+.resumo button {
+    margin-top: 0.8rem;
+    width: 100%;
+    border: none;
+    background: var(--dark-navy);
+    color: var(--white);
+    padding-block: 1.6rem;
+    border-radius: 12.8rem;
+    font-size: 1.8rem;
+    font-weight: 700;
 }
+
+@media (min-width: 736px) {
+    body {
+        min-height: 100shv;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 736px;
+        background: var(--white);
+        border-radius: 3.2rem 0 0 3.2rem;
+    }
+
+    .resultado {
+        padding-block: 3.8rem;
+        border-radius: 3.2rem;
+    }
+    .resultado h1 {
+        font-size: 2.4rem;
+        margin-bottom: 3.6rem;
+    }
+    .resultado div {
+        width: 20rem;
+        height: 20rem;
+        margin-bottom: 2.8rem;
+    }
+    .resultado div strong:nth-of-type(1) {
+        font-size: 7.2rem;
+
+    }
+    .resultado div strong:nth-of-type(2) {
+        font-size: 1.8rem;
+    }
+
+    .resultado h2 {
+        font-size: 3.2rem;
+        margin-bottom: 1.6rem;
+    }
+    .resultado p {
+         font-size: 1.8rem;
+    }
+    .resumo {
+        padding: 3.8rem 4rem;
+    }
+    .resumo h2 {
+        font-size: 2.4rem;
+        margin-bottom: 3rem;
+    }
